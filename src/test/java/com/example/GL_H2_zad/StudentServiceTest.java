@@ -44,7 +44,7 @@ public class StudentServiceTest {
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
         Student resultStudent=mapFromJson(content, Student.class);
-        assertEquals(resultStudent.getImie(), "Szymon");
+        assertEquals( "Szymon", resultStudent.getImie());
     }
 
     protected <T> T mapFromJson(String json, Class<T> clazz)
