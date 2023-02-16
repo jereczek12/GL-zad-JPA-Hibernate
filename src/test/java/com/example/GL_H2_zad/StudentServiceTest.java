@@ -2,10 +2,7 @@ package com.example.GL_H2_zad;
 
 
 import com.example.GL_H2_zad.student.Student;
-import com.example.GL_H2_zad.student.StudentServiceImpl;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +11,6 @@ import org.springframework.boot.json.JsonParseException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -29,9 +25,7 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-public class StudentServiceUnitTest {
-    @Autowired
-    private StudentServiceImpl studentService;
+public class StudentServiceTest {
     @Autowired
     WebApplicationContext webApplicationContext;
 
@@ -54,7 +48,7 @@ public class StudentServiceUnitTest {
     }
 
     protected <T> T mapFromJson(String json, Class<T> clazz)
-            throws JsonParseException, JsonMappingException, IOException {
+            throws JsonParseException, IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(json, clazz);
