@@ -36,7 +36,7 @@ public class StudentServiceTest {
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
     @Test
-    public void getStudentByIsTest() throws Exception {
+    public void getStudentByIdTest() throws Exception {
         String uri = "/students/1";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
